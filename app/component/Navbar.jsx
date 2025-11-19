@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className="fixed top-0 right-0 left-0 z-50 w-full text-white overflow-hidden" style={{ direction: "rtl" }}>
 
       {/* Top Bar */}
-      <div className="bg-black/40 backdrop-blur-sm flex items-center justify-between px-6 py-2 text-xs md:text-sm w-full max-w-screen-xl mx-auto">
+      <div className=" flex items-center justify-between px-6 py-2 text-xs md:text-sm w-full max-w-screen-xl mx-auto">
 
         {/* Social Icons */}
         <div className="hidden md:flex gap-3">
@@ -43,14 +43,15 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="flex items-center justify-between px-6 py-4 text-sm bg-black/40 backdrop-blur-sm w-full max-w-screen-xl mx-auto">
+      <div className="flex items-center justify-between px-6 py-4 text-sm w-full max-w-screen-xl mx-auto">
 
         {/* Logo */}
        <div className="flex items-center">
   <img
     src={logo.src} // ضع هنا مسار الصورة
     alt="Pro Rays Logo"
-     className="h-24 md:h-32 lg:h-40 w-auto"
+    className="h-16 md:h-20 lg:h-24 w-auto"
+
   />
 </div>
 
