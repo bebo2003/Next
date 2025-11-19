@@ -5,12 +5,66 @@ import Image2 from "../public/ارضيات جلد.webp";
 import Image3 from "../public/IMG_2499-1-926x1024.webp";
 import Image4 from "../public/نانوسيراميك.webp";
 import Image5 from "../public/ppf.webp";
+import Image6 from "../public/car2.jpg";
+import Image7 from "../public/car3.jpeg";
+import Image8 from "../public/car4.jpeg";
+import Image9 from "../public/car5.jpeg";
+import Image10 from "../public/car6.jpeg";
+import Image12 from "../public/car7.jpeg";
+import Image13 from "../public/car8.jpeg";
 import HeroSlider from "./Hero";
 import TestimonialsSlider from './Testimonials';
 import ContactSection from './Contact';
 import { motion } from "framer-motion";
 
 export default function Home() {
+
+
+  const news = [
+  {
+    id: 1,
+    title: "عنوان مقالة تجريبية 1",
+    description: "تفاصيل قصيرة لجذب القارئ حول مواصفات السيارة وأهم الميزات.",
+    date: "25 سبتمبر 2025",
+    img: Image6,
+  },
+  {
+    id: 2,
+    title: "عنوان مقالة تجريبية 2",
+    description: "تفاصيل قصيرة لجذب القارئ حول مواصفات السيارة وأهم الميزات.",
+    date: "26 سبتمبر 2025",
+    img: Image7,
+  },
+  {
+    id: 3,
+    title: "عنوان مقالة تجريبية 3",
+    description: "تفاصيل قصيرة لجذب القارئ حول مواصفات السيارة وأهم الميزات.",
+    date: "27 سبتمبر 2025",
+    img: Image8,
+  },
+  {
+    id: 4,
+    title: "عنوان مقالة تجريبية 4",
+    description: "تفاصيل قصيرة لجذب القارئ حول مواصفات السيارة وأهم الميزات.",
+    date: "28 سبتمبر 2025",
+    img: Image9,
+  },
+  {
+    id: 5,
+    title: "عنوان مقالة تجريبية 5",
+    description: "تفاصيل قصيرة لجذب القارئ حول مواصفات السيارة وأهم الميزات.",
+    date: "29 سبتمبر 2025",
+    img: Image10,
+  },
+  {
+    id: 6,
+    title: "عنوان مقالة تجريبية 6",
+    description: "تفاصيل قصيرة لجذب القارئ حول مواصفات السيارة وأهم الميزات.",
+    date: "30 سبتمبر 2025",
+    img: Image12,
+  },
+];
+
   return (
       <div>
       <HeroSlider />
@@ -214,7 +268,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative w-full h-[520px] mb-20">
         <img 
-          src="/hero-car.jpg"
+          src={Image6.src}
           className="w-full h-full object-cover opacity-60"
         />
 
@@ -242,38 +296,33 @@ export default function Home() {
       </section>
 
       {/* ARTICLES GRID */}
-      <section className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-10">آخر الأخبار</h2>
+     <section className="max-w-7xl mx-auto px-6">
+  <h2 className="text-3xl font-bold mb-10">آخر الأخبار</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {[1,2,3,4,5,6].map((i) => (
-            <div key={i} 
-                className="rounded-xl overflow-hidden bg-[#1F1F1F] 
-                           hover:-translate-y-1 hover:shadow-xl 
-                           transition duration-300 shadow-lg">
-              
-              <img 
-                src={`/car${i}.jpg`}
-                className="w-full h-48 object-cover"
-              />
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-[#b87333]">
+    {news.map(  (item) => (
+      <div
+        key={item.id}
+        className="rounded-xl overflow-hidden bg-[#1F1F1F] 
+                   hover:-translate-y-1 hover:shadow-xl 
+                   transition duration-300 shadow-lg"
+      >
+        <img
+          src={typeof item.img === "string" ? item.img : item.img?.src}
+          alt={item.title}
+          className="w-full h-48 object-cover"
+        />
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  عنوان مقالة تجريبية {i}
-                </h3>
-
-                <p className="text-gray-400 text-sm mb-4">
-                  تفاصيل قصيرة لجذب القارئ حول مواصفات السيارة وأهم الميزات.
-                </p>
-
-                <span className="text-[#C49A6C] text-xs">
-                  25 سبتمبر 2025
-                </span>
-              </div>
-            </div>
-          ))}
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+          <p className="text-gray-400 text-sm mb-4">{item.description}</p>
+          <span className="text-[#C49A6C] text-xs">{item.date}</span>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
 
     </main>
 

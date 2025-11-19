@@ -45,7 +45,7 @@ export default function Testimonials() {
       <div className="text-center mb-10 px-4">
         <h2 className="text-4xl font-bold">ماذا يقول العميل عنا</h2>
         <div className="w-28 h-1 bg-[#cd7f32] mx-auto mt-4"></div>
-        <p className="text-gray-600 mt-4 text-lg">
+        <p className="text-white mt-4 text-lg">
           شهادات العملاء تعكس جودة خدماتنا
         </p>
       </div>
